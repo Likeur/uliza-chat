@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uliza-chat</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <main>
+        <section class="lg:flex lg:justify-center">
+            <section id="discussion-box" class="absolute w-72 lg:relative lg:w-[20%] h-screen bg-gray-50 -translate-x-[100%] lg:-translate-x-0 border-green-600/50 shadow-sm border duration-200">
+                <div class="">
+                    <div class="h-[8vh] border-b p-4 flex justify-between items-center">
+                        <h1 class="text-xl text-gray-900 font-semibold flex items-center">
+                            <i class='bx bx-chat text-xl mt-1'></i>
+                            <span class="ml-1">Discussions</span>
+                        </h1>
+                        <div class="flex justify-center items-center h-full">
+                            <button></button>
+                            <button class="text-2xl font-semibold bg-gray-200 text-green-600 h-7 w-7 flex justify-center items-end shadow-md rounded-full border border-white hover:bg-green-600 hover:text-white hover:duration-200">+</button>
+                            <button id="fermer" class="ml-2 relative lg:hidden">
+                                <span class="block h-0.5 w-5 absolute -rotate-45 rounded-full  bg-gray-800 "></span>
+                                <span class="block h-0.5 w-5 rotate-45 rounded-full  bg-gray-800"></span>
+                            </button>
+                            
+                        </div>
+                    </div>
+                    <div class="p-4 h-[90vh] overflow-y-scroll">
+                        <button class="bg-white w-full p-2 rounded-lg shadow-sm flex items-center">
+                            <div class="w-8 h-8 bg-gray-400 shadow-sm rounded-full flex justify-center items-center">
+                                <i class='bx bxs-user text-white'></i>
+                            </div>
+                            <div class="ml-2">
+                                <h2 class="font-semibold">Sujet Généré</h2>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <div class="h-screen overflow-hidden bg-white flex flex-col justify-between lg:w-[60%] lg:border lg:shadow-sm">
+                <div class="bg-white h-[8vh] border-b border-green-600 shadow-sm">
+                    <div class="flex justify-between items-center h-full p-2">
+                        <div>
+                            <span class="flex items-center">
+                                <button id="ouvrir" class="lg:hidden">
+                                    <span class="h-0.5 w-5 block  bg-gray-800 rounded-full "></span>
+                                    <span class="h-0.5 w-5 block  bg-gray-800 rounded-full mt-1"></span>
+                                    <span class="h-0.5 w-5 block  bg-gray-800 rounded-full mt-1"></span>
+                                </button>
+                                <button class="h-8 w-8 hidden rounded-full bg-gray-200 lg:flex items-center justify-center"><i class='bx bx-chevron-left text-green-600 text-2xl'></i></button>
+                                <span class="ml-2 font-semibold text-green-600 text-xl">Chat</span>
+                            </span>
+                        </div>
+                        <div class="relative">
+                            <div class="w-8 h-8 bg-gray-400 rounded-full flex justify-center items-center">
+                                <i class='bx bxs-user text-white'></i>
+                            </div>
+                            <span class="block h-2 w-2 bg-green-500 rounded-full -mt-2 right-0"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white h-[82vh] p-2 flex flex-col justify-end ">
+                    <div class="overflow-y-auto h-full flex flex-col justify-end">
+                        <div class="flex justify-start mt-1">
+                            <div class="w-[60%]">
+                                <div class="bg-gray-200 border p-2 rounded-t-xl rounded-br-xl shadow-md">
+                                    <h1>Recevoir</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-1">
+                            <div class="w-[60%]">
+                                <div class="bg-green-500 border text-white p-2 rounded-t-xl rounded-bl-xl shadow-md mt-1">
+                                    <h1>Send</h1>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="flex justify-start mt-1">
+                            <div class="w-[60%]">
+                                <div class="bg-gray-200 mt-1 border p-2 rounded-t-xl rounded-br-xl shadow-md">
+                                    <h1>Reponse du Chatbot</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="" id="sendMessageForm">
+                    <div class="bg-white border-t h-[8vh] p-4 flex justify-between items-center">
+                        <button class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center"><i class='bx bx-camera text-green-600 text-xl' ></i></button>
+                        <input type="text" placeholder="votre question ici ..." class="ml-2 w-full rounded-full outline-none shadow-sm border p-2">
+                        <button type="submit" class="ml-2 h-8 w-8 bg-gray-200 rounded-full shadow-sm p-1 flex justify-center items-center"><i class='bx bx-send text-green-600 text-xl'></i></button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js"> </script>
+</body>
+</html>

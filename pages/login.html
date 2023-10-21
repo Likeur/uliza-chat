@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/output.css">
+</head>
+<body>
+    <header>
+        <main>
+            <nav class="bg-white border-b border-green-600 shadow-sm">
+                <div class="p-4 flex justify-between text-gray-950 text-lg">
+                    <div>
+                        <a href="../index.html" class="p-2 text-2xl font-semibold ">
+                           <span>Uli</span><span class="text-green-600 font-semibold">za</span>
+                        </a>
+                    </div>
+                    <div class="text-green-950 font-semibold">
+                        <a href="" >Docs</a>
+                        <a href="./login.html" class="p-2 ml-3 bg-green-600 text-white px-4 rounded-md">Login</a>
+                    </div>
+                </div>
+            </nav>
+        </main>
+    </header>
+    <main>
+        <section class="flex flex-col items-center mt-10 p-3">
+            <div class="flex justify-center">
+                <span class="w-3 h-3 rounded-full bg-green-400 block animate-bounce"></span>
+                <span class="w-3 h-3 rounded-full ml-6 bg-green-500 block animate-bounce"></span>
+                <span class="w-3 h-3 rounded-full ml-6 bg-green-700 block animate-bounce"></span>
+            </div>
+            <form class="bg-white p-5  mt-4 shadow-sm border-t-2 border-green-600" [formGroup]="loginForm">
+                <div>
+                    <h1 class="font-semibold text-2xl">Connectez-vous</h1>
+                    <p class="mt-2 text-gray-400">Veuillez entrez votre email et votre mot de passe</p>
+                </div>
+                <input type="email" class="border outline-none p-2 mt-5 w-full" placeholder="votre email" name="email"> <br>
+                <input type="password" name="" id="" class="border outline-none p-2 mt-5 w-full" placeholder="Votre mot de passe" name="password"> <br>
+                <p class="mt-5 text-sm text-red-600">error</p>
+                <button type="submit" class="p-2 mt-5 bg-green-600 disabled:bg-gray-600 w-full text-white text-xl" (click)="onSubmit()" [disabled]="loginForm.invalid" >Connexion</button>
+                <div class="flex flex-col items-center text-xl">
+                   <h1 class="mt-5">Vous n'avez pas de compte ?</h1>
+                   <a href="./register.html" class="text-green-600 underline">S'inscrire</a> 
+                </div>
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>
