@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="bg-white h-[82vh] p-2 flex flex-col justify-end">
-                    <ul id="box-message" class=" h-[82vh] flex flex-col justify-end overflow-y-scroll">
+                    <ul id="box-message" class=" h-[82vh] flex flex-col overflow-y-scroll">
                         <li>
                             <div class="flex justify-start mt-1">
                                 <div class="w-[60%]">
@@ -72,7 +72,6 @@
                                 </div>
                             </div>
                         </li>
-                    
                     </ul>
                 </div>
                 <form action="" id="send-message-form">
@@ -117,13 +116,17 @@
                         <div class="flex justify-end mt-1">
                             <div class="w-[60%]" >
                                 <div class="bg-green-500 border text-white p-2 rounded-t-xl rounded-bl-xl shadow-md mt-1">
-                                    <h1 id="user-send">${userMessage.value}</h1>
+                                    <h1 id="user-mess${id}"></h1>
                                 </div>
                             </div>
                         </div>
                           `
                 boxMessage.appendChild(userSend)
-        
+                const userMess = document.querySelector(`#user-mess${id}`)
+                userMess.textContent = userMessage.value
+
+                userMess.scrollIntoView();
+
                 const botreponse = document.createElement('li')
                 setTimeout(() => {
                     boxMessage.appendChild(botreponse)
@@ -162,6 +165,7 @@
 
                             if (index <= reponse.length) {
                                 setTimeout(afficherCar, 50);
+                                document.getElementById(`texte-affiche${id}`).scrollIntoView();
                             }
                         }; 
                         afficherCar();
