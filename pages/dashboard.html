@@ -9,15 +9,19 @@
 </head>
 <body class="bg-gray-50">
     <main class="flex">
-        <aside class="h-screen lg:w-[15vw] sticky top-0">
+        <aside id="dash-menu" class="h-screen fixed z-50 w-60 -translate-x-[100%] lg:-translate-x-0 duration-200 lg:w-[15vw] lg:sticky lg:top-0">
             <div class="p-4 h-full bg-white border">
-                <div class="border-b">
+                <div class="border-b flex justify-between ">
                     <img src="../image/uli.jpg" alt="" class="w-32">
+                    <button id="dash-fermer" class="ml-2 relative lg:hidden">
+                        <span class="block h-0.5 w-5 absolute -rotate-45 rounded-full  bg-gray-800 "></span>
+                        <span class="block h-0.5 w-5 rotate-45 rounded-full  bg-gray-800"></span>
+                    </button>
                 </div>
                 <nav>
                     <ul>
-                        <li class="p-2 bg-green-600 text-white mt-2 rounded-md font-semibold shadow-sm hover:bg-green-600 hover:text-white flex items-center"><a href=""><i class='bx bxs-dashboard' ></i><span class="ml-2">Dashboard</span></a></li>
-                        <li class="p-2 hover:bg-green-600 mt-2 rounded-md font-semibold hover:text-white"><a href=""><i class='bx bx-wallet'></i><span class="text-sm ml-2">Tarif & payement</span></a></li>
+                        <li class="p-2 bg-green-600 text-white mt-2 rounded-md font-semibold shadow-sm hover:bg-green-600 hover:text-white flex items-center"><a href="./dashboard.html"><i class='bx bxs-dashboard' ></i><span class="ml-2">Dashboard</span></a></li>
+                        <li class="p-2 hover:bg-green-600 mt-2 rounded-md font-semibold hover:text-white"><a href="./tarif.html"><i class='bx bx-wallet'></i><span class="text-sm ml-2">Tarif & payement</span></a></li>
                         
                         <li class="p-2 font-semibold bg-gray-100 rounded-md mt-4"><h3 class="text-green-600">Discuter avec</h3></li>
                         <li class="hover:bg-green-600 mt-2 rounded-md font-semibold hover:text-white"><button class="disabled:bg-red-600 disabled:text-white disabled:w-full p-2 rounded-md"><a href="./uliza-chat.html"><i class='bx bx-message-dots' ></i><span class="ml-2">Uliza-chat</span></a></button></li>
@@ -33,10 +37,15 @@
             </div> 
 
         </aside>
-        <section class="lg:w-[85vw]">
-            <header class="lg:w-[85vw] sticky top-0">
-                <div class="sticky top-0 w-[85vw] p-4 border-b shadow-sm bg-white flex justify-between">
+        <section class=" w-full lg:w-[85vw]">
+            <header class="w-full lg:w-[85vw] sticky top-0">
+                <div class="sticky top-0 lg:w-[85vw] p-4 border-b shadow-sm bg-white flex justify-between">
                     <div class="text-xl">
+                        <button id="dash-ouvrir" class="lg:hidden">
+                            <span class="h-0.5 w-5 bg-gray-900 block rounded-xl"></span>
+                            <span class="h-0.5 w-5 bg-gray-900 block mt-1 rounded-xl"></span>
+                            <span class="h-0.5 w-5 bg-gray-900 block mt-1 rounded-xl"></span>
+                        </button>
                         <span class="font-semibold text-gray-900">Uliza</span><span class="font-bold text-green-600">Tech</span>
                     </div>
                     <div class="flex items-center">
@@ -54,25 +63,32 @@
                 </div>
             </header>
             <section class="p-4">
-                <div class="flex">
+                <div class="flex flex-col lg:flex-row">
                     <div class="lg:w-96 bg-white border p-4">
                         <h2 class="text-2xl font-semibold">Nous sommes fière de developper L'IA en RDC</h2>
                         <p class="text-justify mt-5">Uliza est une création d'OnyoTech, une entreprise de jeunes Congolais , Nous avons pour mission de développer des technologies innovantes en RDC et de mettre l'intelligence artificielle à la disposition de tous les Congolais.</p>
                         <a href="" class="text-green-600 underline block mt-2">Acceder  à notre site web</a>
                     </div>
-                    <div class="lg:w-96 bg-white border p-4 ml-4">
+                    
+                    <div class="lg:w-72 bg-white border p-4 mt-5 lg:mt-0 lg:ml-4 ">
+                        <h2 class="p-2 bg-gray-100 text-gray-800 font-medium">Vos Credits</h2>
+                        <p class="mt-5">Vous avez : <span class="text-green-600 font-semibold">10</span> Unités</p>
+                        <p>Validité : <span class="text-green-600 font-semibold">3</span> Jours</p>
+                        <p class="mt-2 text-gray-500">Ajoutez du crédits pour discuter plus longtemps avec Uliza, decouvrez nos tarif et payement en cliquant <a href="" class="text-green-600 underline">juste ici</a></p>
+                        <p class="text-gray-500 mt-2">--- Discuter avec</p>
+                        <div class="flex justify-around">
+                            <a href="./uliza-chat.html" class="p-2 bg-green-600 mt-2 flex items-center rounded-md text-white font-medium"><i class='bx bx-message-dots' ></i><span class="ml-1">Uliza-chat</span></a>
+                            <a href="" class="p-2 bg-green-600 mt-2 flex items-center rounded-md text-white font-medium "> <i class='bx bx-message-rounded-dots' ></i> <span class="ml-1">Uliza rafiki 2</span></a>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-96 bg-white border p-4 mt-5 lg:mt-0 lg:ml-4 ">
                         <p class="text-justify mt-5">Nous sommes ravis de vous présenter la nouvelle version <strong>d'Uliza Rafiki</strong>, <strong>Uliza Rafiki 2</strong>. Cette version inclut une fonctionnalité unique de clavier mathématique qui vous permet d'écrire des formules mathématiques et de récupérer des réponses précises en temps réel voici votre lien de partage "</p>
                         <div class="flex items-center ">
                             <input type="text" name="" value="https://www.uliza.tech/?rafiki=689" class="border outline-none p-2 mt-2 w-64" id="">
                             <button class="bg-gray-200  ml-2 mt-1.5 p-1 w-10 h-10 rounded-md text-green-600 text-xl"><i class='bx bx-copy-alt' ></i></button>
                             <button class="bg-green-600 ml-2 mt-1.5 p-1 w-10 h-10 rounded-md text-white text-xl "><i class='bx bxl-whatsapp'></i></button>
                         </div>
-                    </div>
-                    <div class="lg:w-72 bg-white border p-4 ml-4">
-                        <h2 class="p-2 bg-gray-100 text-gray-800 font-medium">Vos Credits</h2>
-                        <p class="mt-5">Vous avez : <span class="text-green-600 font-semibold">10</span> Unités</p>
-                        <p>Validité : <span class="text-green-600 font-semibold">3</span> Jours</p>
-                        <p class="mt-5 text-gray-500">Ajoutez du crédits pour discuter plus longtemps avec Uliza, decouvrez nos tarif et payement en cliquant <a href="" class="text-green-600 underline">juste ici</a></p>
                     </div>
                     
                 </div>
@@ -87,7 +103,6 @@
                             <input type="text" placeholder="Votre Nom ... " class="border p-2 mt-2 w-full "> <br>
                             <input type="tel" placeholder="Votre Numero de Téléphone" class="border w-full p-2 mt-2"> <br>
                             <button type="submit" class="bg-green-600 p-2 text-white mt-2 w-32 hover:bg-green-500">Envoyer</button>
-
                          </form>
                     </div>
                 </div>
@@ -95,5 +110,19 @@
         </section>
 
     </main>
+
+    <script>
+        const btnDashOuvrir = document.querySelector('#dash-ouvrir')
+        const btnDashFermer = document.querySelector('#dash-fermer')
+        const dashMenu = document.querySelector('#dash-menu')
+
+        btnDashOuvrir.addEventListener('click', ()=>{
+            dashMenu.classList.remove('-translate-x-[100%]');
+        })
+
+        btnDashFermer.addEventListener('click', ()=>{
+            dashMenu.classList.add('-translate-x-[100%]');
+        })
+    </script>
 </body>
 </html>

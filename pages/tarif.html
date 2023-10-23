@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarif | Uliza</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bg-gray-50">
+    <main class="flex">
+        <aside id="dash-menu" class="h-screen fixed z-50 w-60 -translate-x-[100%] lg:-translate-x-0 duration-200 lg:w-[15vw] lg:sticky lg:top-0">
+            <div class="p-4 h-full bg-white border">
+                <div class="border-b flex justify-between ">
+                    <img src="../image/uli.jpg" alt="" class="w-32">
+                    <button id="dash-fermer" class="ml-2 relative lg:hidden">
+                        <span class="block h-0.5 w-5 absolute -rotate-45 rounded-full  bg-gray-800 "></span>
+                        <span class="block h-0.5 w-5 rotate-45 rounded-full  bg-gray-800"></span>
+                    </button>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="p-2  mt-2 rounded-md font-semibold hover:bg-green-600 hover:text-white flex items-center"><a href="./dashboard.html"><i class='bx bxs-dashboard' ></i><span class="ml-2">Dashboard</span></a></li>
+                        <li class="p-2 bg-green-600 text-white shadow-sm hover:bg-green-600 mt-2 rounded-md font-semibold hover:text-white"><a href="./tarif.html"><i class='bx bx-wallet'></i><span class="text-sm ml-2">Tarif & payement</span></a></li>
+                        
+                        <li class="p-2 font-semibold bg-gray-100 rounded-md mt-4"><h3 class="text-green-600">Discuter avec</h3></li>
+                        <li class="hover:bg-green-600 mt-2 rounded-md font-semibold hover:text-white"><button class="disabled:bg-red-600 disabled:text-white disabled:w-full p-2 rounded-md"><a href="./uliza-chat.html"><i class='bx bx-message-dots' ></i><span class="ml-2">Uliza-chat</span></a></button></li>
+                        <li class="p-2 hover:bg-green-600 mt-2 rounded-md font-semibold hover:text-white"><a href=""><i class='bx bx-message-rounded-dots' ></i><span class="ml-2">Uliza-Rafiki 2</span></a></li>
+                    </ul>
+                    <ul>
+                        <li class="p-2 font-semibold bg-gray-100 rounded-md mt-4"><h3 class="text-green-600">Autre</h3></li>
+                        <li class="p-2 hover:bg-green-600 mt-2 rounded-md font-semibold hover:text-white">
+                            <button><i class='bx bx-log-out'></i><span class="ml-2">Déconnexion</span></button>
+                        </li>
+                    </ul>
+                </nav>
+            </div> 
+
+        </aside>
+        <section class=" w-full lg:w-[85vw]">
+            <header class="w-full lg:w-[85vw] sticky top-0">
+                <div class="sticky top-0 lg:w-[85vw] p-4 border-b shadow-sm bg-white flex justify-between">
+                    <div class="text-xl">
+                        <button id="dash-ouvrir" class="lg:hidden">
+                            <span class="h-0.5 w-5 bg-gray-900 block rounded-xl"></span>
+                            <span class="h-0.5 w-5 bg-gray-900 block mt-1 rounded-xl"></span>
+                            <span class="h-0.5 w-5 bg-gray-900 block mt-1 rounded-xl"></span>
+                        </button>
+                        <span class="font-semibold text-gray-900">Uliza</span><span class="font-bold text-green-600">Tech</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="relative">
+                            <div class="w-8 h-8 bg-gray-400 rounded-full flex justify-center items-center">
+                                <i class='bx bxs-user text-white'></i>
+                            </div>
+                            <span class="absolute block h-2 w-2 bg-green-500 rounded-full -mt-2 right-0"></span>
+                        </div>
+                        <div class="ml-2 font-semibold">
+                            <h3 class="text-gray-900">Nom du user</h3>
+                            <h4 class="-mt-2 font-light text-green-600">Statut : Activé</h4>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="p-4">
+                <div class="">
+                    <p class="bg-white lg:w-48 font-semibold text-green-600 p-2 shadow-md rounded-md">Decouvrez nos tarifs</p>
+                    
+                    <div>
+                        <table>
+                            
+                        </table>
+                    </div>
+                </div>
+                
+            </section>
+        </section>
+
+    </main>
+
+    <script>
+        const btnDashOuvrir = document.querySelector('#dash-ouvrir')
+        const btnDashFermer = document.querySelector('#dash-fermer')
+        const dashMenu = document.querySelector('#dash-menu')
+
+        btnDashOuvrir.addEventListener('click', ()=>{
+            dashMenu.classList.remove('-translate-x-[100%]');
+        })
+
+        btnDashFermer.addEventListener('click', ()=>{
+            dashMenu.classList.add('-translate-x-[100%]');
+        })
+    </script>
+</body>
+</html>

@@ -57,47 +57,120 @@
                             <div class="w-8 h-8 bg-gray-400 rounded-full flex justify-center items-center">
                                 <i class='bx bxs-user text-white'></i>
                             </div>
-                            <span class="block h-2 w-2 bg-green-500 rounded-full -mt-2 right-0"></span>
+                            <span class="absolute block h-2 w-2 bg-green-500 rounded-full -mt-2 right-0"></span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white h-[82vh] p-2 flex flex-col justify-end ">
-                    <div class="overflow-y-auto h-full flex flex-col justify-end">
-                        <div class="flex justify-start mt-1">
-                            <div class="w-[60%]">
-                                <div class="bg-gray-200 border p-2 rounded-t-xl rounded-br-xl shadow-md">
-                                    <h1>Recevoir</h1>
+                <div class="bg-white h-[82vh] p-2 flex flex-col justify-end overflow-y-scroll">
+                    <ul id="box-message" class=" h-full flex flex-col justify-end">
+                        <li>
+                            <div class="flex justify-start mt-1">
+                                <div class="w-[60%]">
+                                    <div class="bg-gray-200 border p-2 rounded-t-xl rounded-br-xl shadow-md">
+                                        <h1>Recevoir</h1>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex justify-end mt-1">
-                            <div class="w-[60%]">
-                                <div class="bg-green-500 border text-white p-2 rounded-t-xl rounded-bl-xl shadow-md mt-1">
-                                    <h1>Send</h1>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="flex justify-start mt-1">
-                            <div class="w-[60%]">
-                                <div class="bg-gray-200 mt-1 border p-2 rounded-t-xl rounded-br-xl shadow-md">
-                                    <h1>Reponse du Chatbot</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </li>
+                    
+                    </ul>
                 </div>
-                <form action="" id="sendMessageForm">
+                <form action="" id="send-message-form">
                     <div class="bg-white border-t h-[8vh] p-4 flex justify-between items-center">
                         <button class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center"><i class='bx bx-camera text-green-600 text-xl' ></i></button>
-                        <input type="text" placeholder="votre question ici ..." class="ml-2 w-full rounded-full outline-none shadow-sm border p-2">
-                        <button type="submit" class="ml-2 h-8 w-8 bg-gray-200 rounded-full shadow-sm p-1 flex justify-center items-center"><i class='bx bx-send text-green-600 text-xl'></i></button>
+                        <input id="user-message" type="text" placeholder="votre question ici ..." class="ml-2 w-full rounded-full outline-none shadow-sm border p-2">
+                        <button type="submit" id="btn-submit" class="ml-2 h-8 w-8 bg-gray-200 rounded-full shadow-sm p-1 flex justify-center items-center"><i class='bx bx-send text-green-600 text-xl'></i></button>
                     </div>
                 </form>
             </div>
         </section>
     </main>
 
-    <script src="../js/script.js"> </script>
+    <script> 
+        const btnOuvrir = document.querySelector('#ouvrir')
+        const btnFermer = document.querySelector('#fermer')
+        const discussionBox = document.querySelector('#discussion-box')
+
+        btnOuvrir.addEventListener('click', ()=>{
+            discussionBox.classList.remove('-translate-x-[100%]');
+        })
+        btnFermer.addEventListener('click', ()=>{
+            discussionBox.classList.add('-translate-x-[100%]');
+        })
+
+        let boxMessage = document.querySelector('#box-message')
+        const sendMessageForm = document.querySelector('#send-message-form')
+        const userMessage = document.querySelector('#user-message')
+
+
+        sendMessageForm.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            sendMessageForm.reset()
+        })
+        
+        const btnSubmit = document.querySelector('#btn-submit')
+        let id = 1
+        btnSubmit.addEventListener('click',()=>{
+        
+                const userSend = document.createElement('li')
+                userSend.innerHTML = `
+                        <div class="flex justify-end mt-1">
+                            <div class="w-[60%]" >
+                                <div class="bg-green-500 border text-white p-2 rounded-t-xl rounded-bl-xl shadow-md mt-1">
+                                    <h1 id="user-send">${userMessage.value}</h1>
+                                </div>
+                            </div>
+                        </div>
+                          `
+                boxMessage.appendChild(userSend)
+        
+                const botreponse = document.createElement('li')
+                setTimeout(() => {
+                    boxMessage.appendChild(botreponse)
+                }, 200);
+                setTimeout(() => {
+                    botreponse.innerHTML = `
+                        <div class="flex justify-start mt-1">
+                            <div class="w-[60%]">
+                                <div id="boite-reponse" class="bg-gray-200 mt-1 border p-2 rounded-t-xl rounded-br-xl shadow-md">
+                                    <h1>ecrit...</h1>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                }, 500);
+                setTimeout(() => {
+                    botreponse.innerHTML = `
+                        <div class="flex justify-start mt-1">
+                            <div class="w-[60%]">
+                                <div id="boite-reponse" class="bg-gray-200 mt-1 border p-2 rounded-t-xl rounded-br-xl shadow-md">
+                                    <h1 id="texte-affiche${id}"></h1>
+                                </div>
+                            </div>
+                        </div>
+                        `
+
+                        const reponse = "Hello mon cher développeur, je suis vraiment content de t'avoir ici";
+                        let texteAffiche = '';
+                        let index = 0;
+
+                        const afficherCar = () => {
+                            texteAffiche = reponse.substring(0, index);
+                            index++;
+
+                            document.getElementById(`texte-affiche${id}`).textContent = texteAffiche;
+
+                            if (index <= reponse.length) {
+                                setTimeout(afficherCar, 50);
+                            }
+                        }; 
+                        afficherCar();
+                }, 1500);
+                id = id + 1
+        })
+        
+        
+
+    </script>
 </body>
 </html>

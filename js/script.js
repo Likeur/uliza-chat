@@ -1,10 +1,27 @@
-const btnOuvrir = document.querySelector('#ouvrir')
-const btnFermer = document.querySelector('#fermer')
-const discussionBox = document.querySelector('#discussion-box')
+const loginForm = document.querySelector('#login-form')
+const error = document.querySelector('#error-message')
+const email = document.querySelector('#mail')
+const password = document.querySelector('#password')
+const loader = document.querySelector('#loader')
 
-btnOuvrir.addEventListener('click', ()=>{
-    discussionBox.classList.remove('-translate-x-[100%]');
-})
-btnFermer.addEventListener('click', ()=>{
-    discussionBox.classList.add('-translate-x-[100%]');
+loginForm.addEventListener('submit', (e)=>{
+    e.preventDefault()
+
+    if (email.value == 'jacksimba28@gmail.com' && password.value == '1234') {
+        loader.classList.remove('hidden')
+        setTimeout(() => {
+            loader.classList.add('hidden')
+            console.log('Bien connecté')
+            window.location.assign('../pages/dashboard.html')
+        }, 1500);
+    }else{
+        loader.classList.remove('hidden')
+        setTimeout(() => {
+            loader.classList.add('hidden')
+            error.textContent = 'Echec'
+        }, 1500);
+    }
+
+    loginForm.reset()
+  
 })
