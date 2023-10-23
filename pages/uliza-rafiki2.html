@@ -50,7 +50,7 @@
                                     <span class="h-0.5 w-5 block  bg-gray-800 rounded-full mt-1"></span>
                                 </button>
                                 <button class="h-8 w-8 hidden rounded-full bg-gray-200 lg:flex items-center justify-center"><i class='bx bx-chevron-left text-green-600 text-2xl'></i></button>
-                                <span class="ml-2 font-semibold text-green-600 text-xl">Rafiki-2</span>
+                                <span class="ml-2 font-semibold text-green-600 text-xl">Chat</span>
                             </span>
                         </div>
                         <div class="relative">
@@ -62,17 +62,16 @@
                     </div>
                 </div>
                 <div class="bg-white h-[82vh] p-2 flex flex-col justify-end">
-                    <ul id="box-message" class=" h-[82vh] flex flex-col justify-end overflow-y-scroll">
+                    <ul id="box-message" class=" h-[82vh] flex flex-col overflow-x-hidden overflow-y-scroll">
                         <li>
                             <div class="flex justify-start mt-1">
                                 <div class="w-[60%]">
                                     <div class="bg-gray-200 border p-2 rounded-t-xl rounded-br-xl shadow-md">
-                                        <h1>Hello , je suis uliza rafiki 2,  qu'est-ce que je peux faire pour toi aujourd'hui ?</h1>
+                                        <h1>Hello, je suis uliza Math , je t'aide à resoudre tes problèmes de math, qu'est-ce que je peux faire pour toi ?</h1>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                    
                     </ul>
                 </div>
                 <form action="" id="send-message-form">
@@ -117,13 +116,17 @@
                         <div class="flex justify-end mt-1">
                             <div class="w-[60%]" >
                                 <div class="bg-green-500 border text-white p-2 rounded-t-xl rounded-bl-xl shadow-md mt-1">
-                                    <h1 id="user-send">${userMessage.value}</h1>
+                                    <h1 id="user-mess${id}"></h1>
                                 </div>
                             </div>
                         </div>
                           `
                 boxMessage.appendChild(userSend)
-        
+                const userMess = document.querySelector(`#user-mess${id}`)
+                userMess.textContent = userMessage.value
+
+                userMess.scrollIntoView();
+
                 const botreponse = document.createElement('li')
                 setTimeout(() => {
                     boxMessage.appendChild(botreponse)
@@ -162,6 +165,7 @@
 
                             if (index <= reponse.length) {
                                 setTimeout(afficherCar, 50);
+                                document.getElementById(`texte-affiche${id}`).scrollIntoView();
                             }
                         }; 
                         afficherCar();
