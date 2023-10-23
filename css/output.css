@@ -586,10 +586,6 @@ video {
   margin-left: 1rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
 .ml-6 {
   margin-left: 1.5rem;
 }
@@ -610,6 +606,10 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -620,14 +620,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mt-0 {
-  margin-top: 0px;
 }
 
 .block {
@@ -670,8 +662,16 @@ video {
   height: 0.75rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
 .h-40 {
   height: 10rem;
+}
+
+.h-52 {
+  height: 13rem;
 }
 
 .h-7 {
@@ -700,18 +700,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-32 {
-  height: 8rem;
-}
-
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-52 {
-  height: 13rem;
 }
 
 .w-10 {
@@ -754,6 +742,10 @@ video {
   width: 2rem;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
 .w-96 {
   width: 24rem;
 }
@@ -766,8 +758,8 @@ video {
   width: 100%;
 }
 
-.w-80 {
-  width: 20rem;
+.w-9 {
+  width: 2.25rem;
 }
 
 .-translate-x-\[100\%\] {
@@ -803,10 +795,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.items-start {
-  align-items: flex-start;
 }
 
 .items-end {
@@ -1031,10 +1019,6 @@ video {
   text-align: justify;
 }
 
-.text-start {
-  text-align: start;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1167,62 +1151,6 @@ video {
   transition-duration: 200ms;
 }
 
-.placeholder\:relative::-moz-placeholder {
-  position: relative;
-}
-
-.placeholder\:relative::placeholder {
-  position: relative;
-}
-
-.placeholder\:mt-0::-moz-placeholder {
-  margin-top: 0px;
-}
-
-.placeholder\:mt-0::placeholder {
-  margin-top: 0px;
-}
-
-.placeholder\:-mt-0::-moz-placeholder {
-  margin-top: -0px;
-}
-
-.placeholder\:-mt-0::placeholder {
-  margin-top: -0px;
-}
-
-.placeholder\:-mt-5::-moz-placeholder {
-  margin-top: -1.25rem;
-}
-
-.placeholder\:-mt-5::placeholder {
-  margin-top: -1.25rem;
-}
-
-.placeholder\:self-start::-moz-placeholder {
-  align-self: flex-start;
-}
-
-.placeholder\:self-start::placeholder {
-  align-self: flex-start;
-}
-
-.placeholder\:text-center::-moz-placeholder {
-  text-align: center;
-}
-
-.placeholder\:text-center::placeholder {
-  text-align: center;
-}
-
-.placeholder\:text-end::-moz-placeholder {
-  text-align: end;
-}
-
-.placeholder\:text-end::placeholder {
-  text-align: end;
-}
-
 .hover\:bg-green-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
@@ -1297,10 +1225,6 @@ video {
     margin-top: 8rem;
   }
 
-  .lg\:ml-2 {
-    margin-left: 0.5rem;
-  }
-
   .lg\:flex {
     display: flex;
   }
@@ -1354,12 +1278,12 @@ video {
     align-items: flex-start;
   }
 
-  .lg\:items-end {
-    align-items: flex-end;
-  }
-
   .lg\:items-center {
     align-items: center;
+  }
+
+  .lg\:justify-end {
+    justify-content: flex-end;
   }
 
   .lg\:justify-center {
