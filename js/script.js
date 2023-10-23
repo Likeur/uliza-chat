@@ -7,7 +7,7 @@ const loader = document.querySelector('#loader')
 loginForm.addEventListener('submit', (e)=>{
     e.preventDefault()
 
-    if (email.value == 'jacksimba28@gmail.com' && password.value == '1234') {
+    if (email.value == 'likeur.off@gmail.com' && password.value == '1234') {
         loader.classList.remove('hidden')
         setTimeout(() => {
             loader.classList.add('hidden')
