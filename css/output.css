@@ -578,6 +578,10 @@ video {
   z-index: 10;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .-mt-2 {
   margin-top: -0.5rem;
 }
